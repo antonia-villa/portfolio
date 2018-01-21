@@ -1,0 +1,28 @@
+/* Color Pallete */
+
+/*
+Dim Gray - #575757
+Black - #1D1D1D
+Dim Gray #3C3C3C
+White #FAFAFA
+Gray #8C8C8C
+*/
+
+/********************/
+/* Overall Site     */
+/********************/
+body, html {
+	font-family: 'Barlow', sans-serif;
+}
+
+/********************/
+/* Nav Bar Styling  */
+/********************/
+
+.navbar {
+	text-transform: uppercase;
+}
+
+#websiteIcon {
+	margin-right: 10px;
+}
