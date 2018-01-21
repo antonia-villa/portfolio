@@ -13,16 +13,55 @@ Gray #8C8C8C
 /********************/
 body, html {
 	font-family: 'Barlow', sans-serif;
+	height: 100%;
+    width: 100%;
+    margin: 0;
 }
 
+.container {
+	margin:0;
+}
 /********************/
 /* Nav Bar Styling  */
 /********************/
 
 .navbar {
 	text-transform: uppercase;
+	background-color: #20252b !important;
 }
 
 #websiteIcon {
 	margin-right: 10px;
+}
+
+/********************/
+/* Intro   */
+/********************/
+
+.intro-body {
+    vertical-align: middle;
+    padding: 100px 0px 0px 0px;
+}
+
+.intro {
+	position: absolute;
+    bottom: 0;
+    width: 100%; 
+    height: 100%;
+    padding: 100px 0px 0px 0px;
+    text-align: center;
+    background: url(../img/artwork/background_image_2.jpg) no-repeat scroll;
+    background-color: #000;
+    background-size: cover;
+}
+
+.intro-text {
+	text-align: center;
+	background-color: #E6E6E6;
+	opacity: .9;
+	color: #20252b;
+	border-radius: 5px;
+	padding:30px 25px 30px 25px;
+	font-size: 18px;
+	font-weight: bold;
 }
