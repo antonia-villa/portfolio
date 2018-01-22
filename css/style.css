@@ -11,16 +11,41 @@ Gray #8C8C8C
 /********************/
 /* Overall Site     */
 /********************/
-body, html {
+body {
 	font-family: 'Barlow', sans-serif;
+	position: relative;
 	height: 100%;
     width: 100%;
-    margin: 0;
+    background-color: #20252b;
+    color: white;
 }
 
-.container {
-	margin:0;
+html {
+	width: 100%;
+	height: 100%;
 }
+
+h2 {
+	font-size: 38px;
+}
+
+h3 {
+	text-align: justify-all;
+	color: #20252b;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+h4 {
+	text-align: left;
+	color: #3C3C3C;
+	font-size: 16px;
+}
+
+.col {
+	padding-left: 0px !important;
+}
+
 /********************/
 /* Nav Bar Styling  */
 /********************/
@@ -34,34 +59,172 @@ body, html {
 	margin-right: 10px;
 }
 
+/*********************/
+/* For Scrolling */
+/*********************/
+
+#scroll a {
+  padding-top: 60px;
+}
+#scroll a span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 46px;
+  height: 46px;
+  margin-left: -23px;
+  border: 2px solid #fff;
+  background-color: rgba(32, 37, 43, .8);
+  border-radius: 100%;
+  box-sizing: border-box;
+}
+#scroll a span::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: '';
+  width: 16px;
+  height: 16px;
+  margin: -12px 0 0 -8px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  box-sizing: border-box;
+}
+#scroll a span::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  content: '';
+  width: 44px;
+  height: 44px;
+  box-shadow: 0 0 0 0 rgba(255,255,255,.1);
+  border-radius: 100%;
+  opacity: 0;
+  -webkit-animation: sdb03 3s infinite;
+  animation: sdb03 3s infinite;
+  box-sizing: border-box;
+}
+
+@-webkit-keyframes sdb03 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    box-shadow: 0 0 0 60px rgba(255,255,255,.1);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes sdb03 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    box-shadow: 0 0 0 60px rgba(255,255,255,.1);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.scrollingArrow a {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #fff;
+  font : normal 400 20px/1 'Josefin Sans', sans-serif;
+  letter-spacing: .1em;
+  text-decoration: none;
+  transition: opacity .3s;
+}
+.scrollingArrow a:hover {
+  opacity: .5;
+}
+
 /********************/
 /* Intro   */
 /********************/
 
-.intro-body {
-    vertical-align: middle;
-    padding: 100px 0px 0px 0px;
+.masthead {
+  display: table;
+  width: 100%;
+  height: auto;
+  padding: 110px 0px 200px 0px;
+  text-align: center;
+  color: white;
+  background: url("../img/artwork/background_image_2.jpg") no-repeat bottom center scroll;
+  background-color: black;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-.intro {
-	position: absolute;
-    bottom: 0;
-    width: 100%; 
-    height: 100%;
-    padding: 100px 0px 0px 0px;
-    text-align: center;
-    background: url(../img/artwork/background_image_2.jpg) no-repeat scroll;
-    background-color: #000;
-    background-size: cover;
+.masthead .intro-body {
+	z-index: 1;
+	display: table-cell;
+    vertical-align: middle;
+    padding: 20px 0px 0px 0px;
 }
 
 .intro-text {
-	text-align: center;
+	text-align: justify-all;
+	line-height: 170%;
 	background-color: #E6E6E6;
 	opacity: .9;
 	color: #20252b;
 	border-radius: 5px;
-	padding:30px 25px 30px 25px;
-	font-size: 18px;
+	padding:50px 25px 50px 25px;
+	font-size: 16px;
 	font-weight: bold;
+}
+
+/********************/
+/* Projects   */
+/********************/
+.projectContainer {
+	background-color: #e6e6e6;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 10px 5px 10px 5px;
+	border: .5px solid #3C3C3C;
+	border-radius: 5px;
+}
+
+.projects {
+	background-color: #20252b;
+    width: 100%; 
+    height: 100%;
+}
+
+#projectsHeader {
+	padding-top: 20px;
+	font-size: 48px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.dataSourceLink:link{
+	color: #e6e6e6;
+	text-decoration: none;
+}
+
+.dataSourceLink::hover {
+
 }
