@@ -199,13 +199,13 @@ p {
 
 .scrollingArrow a {
   position: absolute;
-  bottom: 20px;
+  bottom: 80px;
   left: 50%;
   z-index: 2;
   display: inline-block;
   -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
-  color: #fff;
+  color: lightgray;
   font : normal 400 20px/1 'Josefin Sans', sans-serif;
   letter-spacing: .1em;
   text-decoration: none;
@@ -226,8 +226,9 @@ p {
   padding: 200px 0;
   text-align: center;
   color: white;
-  background: url("../img/artwork/background_image_2.jpg") no-repeat bottom center scroll;
-  background-color: black;
+  background: url("../img/artwork/background_image_3.png") no-repeat bottom center scroll;
+  object-fit: contain;
+  background-color: white;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -270,7 +271,7 @@ p {
 
 /* Project Header Contaner */
 #projectHeaderContainer {
-  background-image: url('../img/data_vis2.png');
+  background-image: url('../img/data_vis1.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
