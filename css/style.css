@@ -226,7 +226,6 @@ p {
   padding: 200px 0;
   text-align: center;
   color: white;
-  background: url("../img/artwork/background_image_3.png") no-repeat bottom center scroll;
   object-fit: contain;
   background-color: white;
   -webkit-background-size: cover;
@@ -265,13 +264,16 @@ p {
   }
 }
 
+#d3_visual{
+  padding-top: 100px;
+}
+
 /********************/
 /* Projects   */
 /********************/
 
 /* Project Header Contaner */
 #projectHeaderContainer {
-  background-image: url('../img/data_vis1.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -352,7 +354,6 @@ p {
 /* Contact   */
 /********************/
 #contact{
-	background: url("../img/artwork/background_image_2.jpg") no-repeat bottom center scroll;
 	background-size: cover;
 	background-position: center;
   padding-top: 20px;

@@ -8,6 +8,7 @@
   	<!-- Custom Fonts -->
   	<link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
   	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  	<link rel="stylesheet" type="text/css" href="css/charts.css">
   	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
@@ -31,6 +32,8 @@
     <header class="masthead">
       <div class="intro-body">
         <div class="container">
+        <div class="row" id="d3_visual">
+		</div>
           <div class="row">
             <div class="col-lg-8 mx-auto">
               <p class="intro-text">
@@ -127,8 +130,19 @@
           </div>
         </div>
     </section>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+	<script src="https://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://d3js.org/d3-array.v1.min.js"></script>
+<script src="https://d3js.org/d3-path.v1.min.js"></script>
+<script src="https://d3js.org/d3-chord.v1.min.js"></script>
+<script>
+
+var chord = d3.chord();
+
+</script>
+	<script src="js/d3_visual.js"></script>
 	<script src="js/script.js"></script>
 </body>
 </html>
