@@ -29,84 +29,93 @@
 	     </ul>
 	    </div>
 	</nav>
+
     <header class="masthead">
       <div class="intro-body">
         <div class="container">
-        <div class="row" id="d3_visual">
+        <div class="row visualRow">
+        	<div class=" col mx-auto" id= "d3_visual">
+        	</div>
+        	<div class ="col intro-text">
+        		<div class="projectDescription">
+        			<h3><a href="#project1">Playing Dead</a></h3>
+        			<hr>
+        			<p> An exploration into the leading causes of death by cause, state, and year from 1999 through 2014. </p>
+        		</div>
+        		<div class="projectDescription">
+        			<h3><a href="#project2">Census Visualizer</a></h3>
+        			<hr>
+        			<p> A visual representation enabling users to view and compare census data for different zipcodes. </p>
+        		</div>
+        		 <div class="projectDescription">
+        		 	<h3>DreamState</h3>
+        		 	<hr>
+        		 	 <p> An application for the ever curious dreamer who is interested in uncovering the true meaning of their dreams and discovering trends in their dreams over time. </p>
+        		</div>
+        		<div class="projectDescription">
+        			<h3>Up and Coming</h3>
+        			<hr>
+        			<p> An interactive map for uncovering ..... </p>
+        		</div>
+        	</div>
 		</div>
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <p class="intro-text">
-              	I’m a full stack developer who refuses to believe data visualization’s only role is as a scientific tool for data analytics. A visualization can break down numbers into patterns, trends, and make information interesting and even beautiful. My goal is to make data more accessible to the people and empower them to learn from it rather than shy away from its complexities. A piece of art can inspire, impress, and make you think, and so should a good data visualization.
-              </p>
-            </div>
-          </div>
         </div>
       </div>
-     	<section id="scroll" class="scrollingArrow">
+     <section id="scroll" class="scrollingArrow">
 	  <a href="#projects"><span></span></a>
 	</section>
     </header>
+
+
     <!--- Projects -->
-	<section id="projects" class="content-section text-center">
-		<!-- Introduction to Projects -->
-		<div class="container-fluid">
-			<div class="row" id="projectHeaderContainer">
-					<div class="headerText">
-			    		<h2 id="projectsHeader">Projects</h2>
-			    		<h3 id="projectSubHeader">My personal & <br/>
-			    		Professional experience</h3>
-			  		</div>
-		  	</div>
-      </div>
-      <!-- Project 1 -->
-      <div class="container-fluid">
-        <div class="row projectContainer">
-            <div class="col-6 col-sm-4 projectText">
-                <h3>Leading Causes of Death</h3>
-                <h4>D3, Javascript</h4>
-                <hr>
-                <p> An exploration into the leading causes of death by cause, state, and year from 1999 through 2014. </p>
-                <div class="buttonContainer"><a class="btn btn-primary" href="https://census-visualizer.herokuapp.com/">View Project <span class="glyphicon glyphicon-chevron-right"></span></a></div>
-            </div>
-            <div class="col col-sm-8 projectImages">
-            	<img class ="project_images" src = "img/Project1/project1_all_views.jpg">
-            </div>
+
+    
+    <div id="project1" class="anchorDiv"></div>
+    	<div class="container-fluid">
+	        <div class="row projectContainer">
+	            <div class="col-6 col-sm-4 projectText">
+	                <h3>Leading Causes of Death</h3>
+	                <h4>D3, Javascript</h4>
+	                <hr>
+	                <p> An exploration into the leading causes of death by cause, state, and year from 1999 through 2014. </p>
+	                <div class="buttonContainer"><a class="btn btn-primary" href="https://census-visualizer.herokuapp.com/">View Project <span class="glyphicon glyphicon-chevron-right"></span></a></div>
+	            </div>
+	            <div class="col col-sm-8 projectImages">
+	            	<img class ="project_images" src = "img/Project1/project1_all_views.jpg">
+	            </div>
+	        </div>
+     	</div>
+     <div id="project2" class="anchorDiv"></div>
+    	<div class="container-fluid">
+	        <div class="row projectContainer">
+	            <div class="col-6 col-sm-4 projectText">
+	                <h3>Census Visualizer</h3>
+	                <h4>Charts JS, Node, Express</h4>
+	                <hr>
+	                <p> A visual representation enabling users to view and compare census data for different zipcodes. </p>
+	                <div class="buttonContainer"><a class="btn btn-primary" href="https://census-visualizer.herokuapp.com/">View Project <span class="glyphicon glyphicon-chevron-right"></span></a></div>
+	            </div>
+	            <div class="col col-sm-8 projectImages">
+	            	 <img class ="project_images" src = "img/Project2/project2_all_views.jpg">
+	            </div>
+	        </div>
+     	</div>
+<div id="project3" class="anchorDiv"></div>
+    <div class="row projectContainer project2">
+        <div class="col-6 col-sm-4 projectText">
+            <h3>Dream State</h3>
+            <h4>React, Recharts</h4>
+            <hr>
+            <p> An application for the ever curious dreamer who is interested in uncovering the true meaning of their dreams and discovering trends in their dreams over time. </p>
+            <div class="buttonContainer"><a class="btn btn-primary" href="https://census-visualizer.herokuapp.com/">View Project <span class="glyphicon glyphicon-chevron-right"></span></a></div>
         </div>
-     </div>
-      <!-- Project 2 -->
-      <div class="container-fluid">
-        <div class="row projectContainer project2">
-            <div class="col col-sm-8 projectImages">
-              <img class ="project_images" src = "img/Project2/project2_all_views.jpg">
-            </div>
-            <div class="col-6 col-sm-4 projectText">
-                <h3>Explore Census Data</h3>
-                <h4>Charts JS, Node, Express</h4>
-                <hr>
-                <p> A visual representation enabling users to view and compare census data for different zipcodes. </p>
-                <div class="buttonContainer"><a class="btn btn-primary" href="https://census-visualizer.herokuapp.com/">View Project <span class="glyphicon glyphicon-chevron-right"></span></a></div>
-            </div>
+        <div class="col col-sm-8 projectImages">
+          <img class ="project_images" src = "img/Project3/project3_all_views.jpg">
         </div>
-        <div class="row projectContainer project2">
-            <div class="col-6 col-sm-4 projectText">
-                <h3>Dream State</h3>
-                <h4>React, Recharts</h4>
-                <hr>
-                <p> An application for the ever curious dreamer who is interested in uncovering the true meaning of their dreams and discovering trends in their dreams over time. </p>
-                <div class="buttonContainer"><a class="btn btn-primary" href="https://census-visualizer.herokuapp.com/">View Project <span class="glyphicon glyphicon-chevron-right"></span></a></div>
-            </div>
-            <div class="col col-sm-8 projectImages">
-              <img class ="project_images" src = "img/Project3/project3_all_views.jpg">
-            </div>
-        </div>
-     </div>
-        
     </div>
-    <!-- /.container -->
-		</div>
-		</div>
-	</section>
+
+
+
 	<!--- Contact Section -->
     <section id="contact" class="content-section text-center">
       <div class="container">
@@ -142,7 +151,7 @@
 var chord = d3.chord();
 
 </script>
-	<script src="js/d3_visual.js"></script>
+	<script src="js/d3_visual_2.js"></script>
 	<script src="js/script.js"></script>
 </body>
 </html>

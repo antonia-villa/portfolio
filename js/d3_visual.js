@@ -1,6 +1,6 @@
 
-var width = 720,
-height = 720,
+var width = 500,
+height = 500,
 outerRadius = Math.min(width, height) / 2 - 10,
 innerRadius = outerRadius - 24;
  
@@ -28,7 +28,7 @@ var svg = d3.select("#d3_visual").append("svg")
 svg.append("circle")
 .attr("r", outerRadius);
  
-d3.csv("js/topics.csv", function(cities) {
+d3.csv("js/topics.csv", function(skills) {
 d3.json("js/matrix.json", function(matrix) {
  
 // Compute the chord layout.
@@ -41,45 +41,56 @@ var group = svg.selectAll(".group")
 .attr("class", "group")
 .on("mouseover", mouseover);
  
-// Add a mouseover title.
-// group.append("title").text(function(d, i) {
-// return cities[i].name + ": " + formatPercent(d.value) + " of origins";
-// });
+//Add a mouseover title.
+group.append("title").text(function(d, i) {
+return skills[i].name + ": " + formatPercent(d.value) + " of origins";
+});
  
 // Add the group arc.
 var groupPath = group.append("path")
 .attr("id", function(d, i) { return "group" + i; })
 .attr("d", arc)
-.style("fill", function(d, i) { return cities[i].color; });
+.style("fill", function(d, i) { return skills[i].color; });
  
 // Add a text label.
+// Option 1
+// var groupText = group.append("text")
+// .attr("x", 6)
+// .attr("dy", 15);
+ 
+// groupText.append("textPath")
+// .attr("xlink:href", function(d, i) { return "#group" + i; })
+// .text(function(d, i) { return skills[i].name; });
+ 
+// Option 2
 var groupText = group.append("text")
-.attr("x", 6)
-.attr("dy", 15);
- 
-groupText.append("textPath")
-.attr("xlink:href", function(d, i) { return "#group" + i; })
-.text(function(d, i) { return cities[i].name; });
- 
-// Remove the labels that don't fit. :(
-groupText.filter(function(d, i) { return groupPath[0][i].getTotalLength() / 2 - 16 < this.getComputedTextLength(); })
-.remove();
+     .attr("x", 6)
+    .attr("dy", 15)
+  .append("textPath")
+    .attr("xlink:href", function(d) { return "#group" + d; })
+    .text(function(chords, i){return skills[i].name;})
+    .style("fill", "white");
+
+
+// // Remove the labels that don't fit. :(
+// groupText.filter(function(d, i) { return groupPath[0][i].getTotalLength() / 2 - 16 < this.getComputedTextLength(); })
+// .remove();
  
 // Add the chords.
 var chord = svg.selectAll(".chord")
 .data(layout.chords)
 .enter().append("path")
 .attr("class", "chord")
-.style("fill", function(d) { return cities[d.source.index].color; })
+.style("fill", function(d) { return skills[d.source.index].color; })
 .attr("d", path);
  
 // Add an elaborate mouseover title for each chord.
  chord.append("title").text(function(d) {
- return cities[d.source.index].name
- + " → " + cities[d.target.index].name
+ return skills[d.source.index].name
+ + " → " + skills[d.target.index].name
  + ": " + formatPercent(d.source.value)
- + "\n" + cities[d.target.index].name
- + " → " + cities[d.source.index].name
+ + "\n" + skills[d.target.index].name
+ + " → " + skills[d.source.index].name
  + ": " + formatPercent(d.target.value);
  });
  
