@@ -298,8 +298,16 @@ a.projectLink{
 
 .projectLink:hover{
   text-decoration: none;
-  color: #126796;
-  font-weight: 800;
+  color: #356bb0;
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.projectLinkText:hover{
+    color: #356bb0;
+  font-weight: 900;
+  font-size: 20px;
+
 }
 
 @media (min-width: 768px) {
@@ -559,7 +567,16 @@ embed {
 /* About   */
 /********************/
 #brandingStatement {
-  font-size
+  font-size: 18px;
 }
 
+.anchorDiv2{
+  height: 100px;
+  width: 100%;
+}
+
+.aboutMe {
+  margin-left: 150px;
+  margin-right: 150px;
+}
 
