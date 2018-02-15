@@ -28,8 +28,7 @@
 	     </ul>
 	    </div>
 	</nav>
-
-    <header class="masthead">
+	<div class="container masthead">
       <div class="intro-body">
         <div class="container">
         <div class="row visualRow">
@@ -60,10 +59,8 @@
 		</div>
         </div>
       </div>
-     <section id="scroll" class="scrollingArrow">
-	  <a href="#projects"><span></span></a>
-	</section>
-    </header>
+    <div class="downarrow"><a href="#projects"><i class="arrow down"></i></a></div>
+    </div>
 
 
     <!--- Projects -->
@@ -73,66 +70,104 @@
 	<div class="container" id="projectsGrid">
         <div class="row projectRow">
         	<div class="col-md-6">
+        		<div class="box">
+
 	            <div class="projectContainer" id="project1Tile">
 	            	<div class="ProjectHeader">
-	            	<a href="#"><img class="img-fluid homeLink" src="img/D3_button_Visual_small_v2.png"></a>
-	                <h3>Playing Dead</h3>
-	                <h4>D3, Javascript</h4>
+	            		<div class="uparrow" id="arrow1"><a href="#"><i class="arrow up"></i></a></div>
+	                	<h3>Playing Dead</h3>
+	                	<h4>JQuery, D3, Bootstrap, ToastR</h4>
 	            	</div>
 	                <hr>
-	                <p> An exploration into the leading causes of death by cause, state, and year from 1999 through 2014. </p>
+	                <p> Delve into open source government data  through an interactive application that explores the leading causes of death by cause, state, and year from 1999 through 2014. </p>
+	                <p> There's a catch - in order to view more granular data sets you must guess the correct overall distribution by cause!</p>
+	                <a class="dataSourceLink" href="https://catalog.data.gov/dataset/age-adjusted-death-rates-for-the-top-10-leading-causes-of-death-united-states-2013"><h4 class="dataSourceLink" >Data Source</h4></a>
+	               	<!-- <img class = "project_images" src="img/Project1/Project1_img2.png" /> -->
+
 	                <div class="buttonContainer">
 	                	<a class="btn btn-secondary" href="https://census-visualizer.herokuapp.com/">View Project</a>
-	                	<a class="gitlink" href="https://antonia-villa.github.io/project1/"><div class="gitbutton"></div>
-	                	</a>
-	                </div>
-	            </div>
-	        </div>
-        	<div class="col-md-6">
-	            <div class="projectContainer" id="project2Tile">
-	                <h3>Playing Dead</h3>
-	                <h4>D3, Javascript</h4>
-	                <hr>
-	                <p> An exploration into the leading causes of death by cause, state, and year from 1999 through 2014. </p>
-	                <div class="buttonContainer">
-	                	<a class="btn btn-secondary" href="https://census-visualizer.herokuapp.com/">View Project</a>
-	                
 	                	<a class="gitlink" href="https://antonia-villa.github.io/project1/"><div class="gitbutton"></div>
 	                	</a>
 	                </div>
 	            </div>
 	        </div>
 	    </div>
+
+        	<div class="col-md-6">
+	        		<div class="box">
+		            <div class="projectContainer" id="project2Tile">
+		            	<div class="ProjectHeader">
+		            		<div class="uparrow" id="arrow2"><a href="#"><i class="arrow up"></i></a></div>
+		                	<h3>Census Visualizer</h3>
+		                	<h4>Node/Express, JQuery, ChartsJS, SQL</h4>
+		            	</div>
+		                <hr>
+		                <p> Data outreach is a key component of the citizen experience for Census. Data collected through the census is a means at exploring the correlation between variables and identifying casual relationships. </p>
+		                <p>This tool sets out to make data easier to use and improve the feedback loop between the public and Census.</p>
+		                <a class="dataSourceLink" href="https://uscensusbureau.github.io/citysdk/"><h4 class="dataSourceLink" >Data Source</h4></a>
+		               	<!-- <img class = "project_images" src="img/Project1/Project1_img2.png" /> -->
+		                <div class="buttonContainer">
+		                	<a class="btn btn-secondary" href="https://census-visualizer.herokuapp.com/">View Project</a>
+		                	<a class="gitlink" href="https://census-visualizer.herokuapp.com/""><div class="gitbutton"></div>
+		                	</a>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+	 </div>
+
         <div class="row projectRow">
         	<div class="col-md-6">
+        		<div class="box">
+
 	            <div class="projectContainer" id="project3Tile">
-	                <h3>Playing Dead</h3>
-	                <h4>D3, Javascript</h4>
+	            	<div class="ProjectHeader">
+	            		<div class="uparrow" id="arrow3"><a href="#"><i class="arrow up"></i></a></div>
+	                	<h3>Dreamstate</h3>
+	                	<h4>Node/Express, React, ReCharts, MongoDB>
+	            	</div>
 	                <hr>
-	                <p> An exploration into the leading causes of death by cause, state, and year from 1999 through 2014. </p>
+	                <p> Uncover the true meaning of your subconcious dreams and discover what your consious mind has learned to repress. Dreamstate is an interactive application enabling users to understand the meaning of their dreams and view an overall sentiment based on keyword analysis.</p>
+	                <p>
+	                	The target user for this app is the ever curious dreamer who is interested in uncovering the true meaning of their dreams and discovering trends in their dreams over time. </p>
+	               	<!-- <img class = "project_images" src="img/Project1/Project1_img2.png" /> -->
+
 	                <div class="buttonContainer">
 	                	<a class="btn btn-secondary" href="https://census-visualizer.herokuapp.com/">View Project</a>
-	                	<a class="gitlink" href="https://antonia-villa.github.io/project1/"><div class="gitbutton"></div>
+	                	<a class="gitlink" href="https://dream-state-app.herokuapp.com/"><div class="gitbutton"></div>
 	                	</a>
 	                </div>
 	            </div>
+	        </div>
 	        </div>
         	<div class="col-md-6">
+        		<div class="box">
+
 	            <div class="projectContainer" id="project4Tile">
-	                <h3>Playing Dead</h3>
-	                <h4>D3, Javascript</h4>
+	            	<div class="ProjectHeader">
+	            		<div class="uparrow" id="arrow4"><a href="#"><i class="arrow up"></i></a></div>
+	                	<h3>Dreamstate</h3>
+	                	<h4>Node/Express, React, ReCharts, MongoDB>
+	            	</div>
 	                <hr>
-	                <p> An exploration into the leading causes of death by cause, state, and year from 1999 through 2014. </p>
+	                <p> Uncover the true meaning of your subconcious dreams and discover what your consious mind has learned to repress. Dreamstate is an interactive application enabling users to understand the meaning of their dreams and view an overall sentiment based on keyword analysis.</p>
+	                <p>
+	                	The target user for this app is the ever curious dreamer who is interested in uncovering the true meaning of their dreams and discovering trends in their dreams over time. </p>
+	               	<!-- <img class = "project_images" src="img/Project1/Project1_img2.png" /> -->
+
 	                <div class="buttonContainer">
 	                	<a class="btn btn-secondary" href="https://census-visualizer.herokuapp.com/">View Project</a>
-	                
-	                	<a class="gitlink" href="https://antonia-villa.github.io/project1/"><div class="gitbutton"></div>
+	                	<a class="gitlink" href="https://dream-state-app.herokuapp.com/"><div class="gitbutton"></div>
 	                	</a>
 	                </div>
 	            </div>
 	        </div>
-	    </div>
-  </div>
+	        </div>
+
+        	
+  	</div>
+</div>
+</div>
 
 
 
@@ -153,14 +188,14 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="form_name">Firstname *</label>
+                    <label for="form_name">Firstname</label>
                     <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
                     <div class="help-block with-errors"></div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="form_lastname">Lastname *</label>
+                    <label for="form_lastname">Lastname</label>
                     <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
                     <div class="help-block with-errors"></div>
                 </div>
@@ -169,7 +204,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="form_email">Email *</label>
+                    <label for="form_email">Email</label>
                     <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
                     <div class="help-block with-errors"></div>
                 </div>
@@ -185,13 +220,13 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
-                    <label for="form_message">Message *</label>
+                    <label for="form_message">Message</label>
                     <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
                     <div class="help-block with-errors"></div>
                 </div>
             </div>
             <div class="col-md-12">
-                <input type="submit" class="btn btn-info" value="Send message">
+                <input type="submit" class="btn btn-form" value="Send message">
             </div>
         </div>
     </div>
@@ -200,13 +235,13 @@
 <hr/>
             <ul class="list-inline banner-social-buttons">
               <li class="list-inline-item">
-                <a href="https://github.com/antonia-villa" class="btn btn-secondary">
+                <a href="https://github.com/antonia-villa" class="btn btn-primary">
                   <i class="fa fa-github fa-fw"></i>
                   <span class="network-name">Github</span>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="https://www.linkedin.com/in/antoniavilla/" class="btn btn-secondary">
+                <a href="https://www.linkedin.com/in/antoniavilla/" class="btn btn-primary">
                   <i class="fa fa-linkedin" fa-fw"></i>
                   <span class="network-name">LinkedIn</span>
                 </a>
@@ -224,6 +259,8 @@
 <script src="https://d3js.org/d3-path.v1.min.js"></script>
 <script src="https://d3js.org/d3-chord.v1.min.js"></script>
 	<script src="js/d3_visual.js"></script>
+	<script src="js/matchHeight.js"></script>
 	<script src="js/script.js"></script>
+
 </body>
 </html>

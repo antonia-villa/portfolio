@@ -59,7 +59,7 @@ p {
 
 
 .buttonContainer{
-  margin-top:100px;
+  margin-top:20px;
   display: flex;
   justify-content: center;
 }
@@ -92,14 +92,34 @@ p {
   background-color: #FFFFFF !important;
 }
 
+.btn-form {
+  text-align: center;
+  color: white !important;
+  background-color: #1a6794 !important; 
+}
+
+.btn-form:hover {
+  text-align: center;
+  color: white !important;
+  background-color: #1a6794 !important; 
+}
+
 .btn:hover {
   color: #6f7376 !important;
   font-weight: 900;
-  border: 1.5px solid darkgray;
+  border: 1.5px solid #1a6794;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.btn-primary:hover {
+  color: black !important;
+  font-weight: 900;
+  border: 1.5px solid #1a6794;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
-a{ padding: none;
+a{ 
+
+  padding: none;
 
 }
 
@@ -316,13 +336,71 @@ a.projectLink{
 /* Projects   */
 /********************/
 
+@media only screen and (max-width : 767px) {
+  .box {
+    height: auto !important;
+  } 
+}
+
+#projectsGrid {
+  margin-bottom: 10px;
+}
+
+.box{
+  margin-bottom: 15px
+}
+/********************/
+/* Card Flipping   */
+/********************/
+/*
+.f1_container {
+  position: relative;
+  margin: 10px auto;
+  width: 450px;
+  height: 281px;
+  z-index: 1;
+}
+.f1_container {
+  perspective: 1000;
+}
+#project1Tile {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 1.0s linear;
+}
+.f1_container:hover #f1_card {
+  transform: rotateY(180deg);
+  box-shadow: -5px 5px 5px #aaa;
+}
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.face.back {
+  display: block;
+  transform: rotateY(180deg);
+  box-sizing: border-box;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  background-color: #aaa;
+}*/
+
+/********************/
+/* Text   */
+/********************/
+
+
 .content-area{
   margin-top: 150px;
   height: 100%;
 }
 
 .anchorDiv{
-  height: 80px;
+  height: 60px;
   width: 100%;
 }
 
@@ -330,12 +408,51 @@ a.projectLink{
   position: relative;
 }
 
-.homeLink{
-  height: 50px;
-  width: 50px;
-  position: absolute;
-  right: 0;
+.downarrow {
+  position:absolute;
+  left: 50%;
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  border: 1px solid white;
+  bottom: 0;
+  background: #20252b;
+  opacity: .9;
+  margin-bottom: 20px;
 }
+
+.uparrow {
+  position:absolute;
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  border: 1px solid white;
+  right: 0;
+  background: #20252b;
+  opacity: .9;
+}
+
+i {
+    text-align: center;
+    border: 1px solid white;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 5px;
+}
+
+.up {
+  margin-left: 10px;
+  margin-top: 10px;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+
 
 .projectContainer {
   margin-bottom: 20px;
@@ -379,18 +496,23 @@ a.projectLink{
 }
 
 .project_images {
-    max-width: 100%;
+    max-width: 80%;
+    max-height: 80%;
     
 }
 
 
-.dataSourceLink:link{
-	color: #e6e6e6;
+.dataSourceLink{
+	color: #126796;
+  font-weight: 900;
+  
 	text-decoration: none;
 }
 
 .dataSourceLink::hover {
-
+  color: pink;
+  font-weight: 1000;
+  font-size: 18px;
 }
 /********************/
 /* Contact   */

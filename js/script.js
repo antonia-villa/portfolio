@@ -61,10 +61,16 @@ $( ".projectLink" ).click(function() {
   for(id in projectIds){
   	console.log('project',projectIds[id] )
   	$('#project'+projectIds[id]+'Tile').attr('class', 'projectContainerUnselected');
+    $('#arrow'+projectIds[id]).hide();
   }
   
-  
 });
+
+$(".uparrow").click(function(){
+  var arrow = $(this).attr('id');
+  $(arrow).show();
+
+})
 
 // Reset Style Class
 $( "#projectsGrid" ).click(function() {
@@ -72,7 +78,11 @@ $( "#projectsGrid" ).click(function() {
 
   for(id in projectIds){
   	$('#project'+projectIds[id]+'Tile').attr('class', 'projectContainer');
+    $('#arrow'+projectIds[id]).show();
   }
 });
 
+
+// To match col height
+$('.box').matchHeight();
 
