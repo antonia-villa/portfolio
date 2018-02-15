@@ -82,6 +82,19 @@ var svg = d3.select("#d3_visual").append("svg")
   .attr("transform", "translate(" + (width/2 + margin.left) + "," + (height/2 + margin.top) + ")")
   .datum(chord(matrix));
 
+// var svg = d3.select("#d3_visual")
+//    .append("div")
+//    .classed("svg-container", true) //container class to make it responsive
+//    .append("svg")
+//    //responsive SVG needs these 2 attributes and no width and height attr
+//    .attr("preserveAspectRatio", "xMinYMin meet")
+//    .attr("viewBox", "0 0 800 800")
+//    //class to make it responsive
+//    .classed("svg-content-responsive", true)
+//    .append("g")
+//    .attr("transform", "translate(" + (width/2 + margin.left) + "," + (height/2 + margin.top) + ")")
+//    .datum(chord(matrix));
+
 ////////////////////////////////////////////////////////////
 ////////////////// Draw outer Arcs /////////////////////////
 ////////////////////////////////////////////////////////////
