@@ -1,9 +1,3 @@
-var margin = {left:90, top:90, right:90, bottom:90},
-    width =  Math.min(window.innerWidth, 800) - margin.left - margin.right, // more flexibility: Math.min(window.innerWidth, 1000)
-    height =  Math.min(window.innerWidth, 800) - margin.top - margin.bottom, // same: Math.min(window.innerWidth, 1000)
-    innerRadius = Math.min(width, height) * .39,
-    outerRadius = innerRadius * 1.1;
-
 var names = [ 'HTML',
               'Javascript',
               'CSS',
@@ -56,7 +50,7 @@ var matrix = [
   /////////// Create scale and layout functions //////////////
   ////////////////////////////////////////////////////////////
 
-  var colors = d3.scale.ordinal()
+  var colors = d3.scaleOrdinal()
       .domain(d3.range(names.length))
     .range(colors);
 
@@ -64,23 +58,45 @@ var matrix = [
     .padAngle(.15)
     .sortChords(d3.descending)
 
-    var arc = d3.svg.arc()
+
+
+
+
+////////////////////////////////////////////////////////////
+////////////////////// Create SVG //////////////////////////
+////////////////////////////////////////////////////////////
+
+// console.log('node', d3.select("#d3_visual").node())
+
+// var test = d3.select("#d3_visual").node()
+// var bbox = test.getBBox();
+
+
+var bbox = d3.select("#d3_visual").node().getBoundingClientRect()
+var width = bbox.width 
+var height = bbox.height
+var innerRadius = Math.min(width, height) * .39,
+    outerRadius = innerRadius * 1.1;
+
+//console.log(height, wid)
+    var arc = d3.arc()
     .innerRadius(innerRadius*1.01)
     .outerRadius(outerRadius);
 
   var path = d3.ribbon()
   .radius(innerRadius);
 
-////////////////////////////////////////////////////////////
-////////////////////// Create SVG //////////////////////////
-////////////////////////////////////////////////////////////
+
 
 var svg = d3.select("#d3_visual").append("svg")
-  .attr("width", width + margin.left + margin.right)
-  .attr("height", height + margin.top + margin.bottom)
+  // .attr("viewBox", "0 0 " + width + " " + "height")
+  .attr("width", width )
+  .attr("height", height)
   .append("g")
-  .attr("transform", "translate(" + (width/2 + margin.left) + "," + (height/2 + margin.top) + ")")
+  .attr("transform", "translate(" + (width/2 ) + "," + (height/2) + ")")
   .datum(chord(matrix));
+
+
 
 // var svg = d3.select("#d3_visual")
 //    .append("div")
@@ -117,18 +133,18 @@ outerArcs.append("path")
   
  // outerArcs.append("text")
  //         .attr("x", 6)
- //        .attr("dy", 15)
+ //        .attr("dy", -10)
  //      .append("textPath")
  //        .attr("xlink:href", function(d) { return "#group" + d.index; })
  //        .text(function(chords, i){return names[i];})
- //        .style("fill", "white");
+ //        .style("fill", "black");
   
 
 ////////////////////////////////////////////////////////////
 ////////////////////// Append names ////////////////////////
 ////////////////////////////////////////////////////////////
 
-//Append the label names on the outside
+// Append the label names on the outside
 outerArcs.append("text")
   .each(function(d) { d.angle = (d.startAngle + d.endAngle) / 2; })
   .attr("dy", ".35em")
@@ -136,7 +152,7 @@ outerArcs.append("text")
   .attr("text-anchor", function(d) { return d.angle > Math.PI ? "end" : null; })
   .attr("transform", function(d) {
     return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")"
-    + "translate(" + (outerRadius + 10) + ")"
+    + "translate(" + (outerRadius + 20) + ")"
     + (d.angle > Math.PI ? "rotate(180)" : "");
   })
   .text(function(d,i) { return names[i]; });
