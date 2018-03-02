@@ -68,7 +68,7 @@ var matrix = [
 
 var bbox = d3.select("#d3_visual").node().getBoundingClientRect()
 var width = bbox.width - 60
-var height = bbox.height - 60
+var height = bbox.height - 80
 var innerRadius = Math.min(width, height) * .39,
     outerRadius = innerRadius * 1.1;
 
@@ -140,10 +140,12 @@ outerArcs.append("path")
         .on("mouseover", function(d) {
             d3.select(this).attr("r", 10)
             .style("fill", "black")
-            .style("font-size", "24px");
+            .style("font-size", "24px")
+            .style("font-weight", "bold")
+            .style("cursor", "pointer")
           })                  
           .on("mouseout", function(d) {
-            d3.select(this).attr("r", 5.5).style("fill", "#616566");
+            d3.select(this).style("font-size", "18px").style("fill", "#616566");
           });
 
 
@@ -161,8 +163,16 @@ outerArcs.append("text")
   })
   .text(function(d,i) { if(names[i] != 'DreamState' && names[i] != 'Playing Dead' && names[i] != 'Visualize County Data') return names[i]; })
   .style("font-size", "12px")
-  .style("fill", "#333333");
-  
+  .style("fill", "#333333")
+  .on("mouseover", function(d) {
+    d3.select(this).attr("r", 10)
+    .style("font-size", "18px")
+    .style("font-weight", "bold")
+  })
+  .on("mouseout", function(d) {
+    d3.select(this).style("font-size", "12px")
+  });
+
 ////////////////////////////////////////////////////////////
 ////////////////// Draw inner chords ///////////////////////
 ////////////////////////////////////////////////////////////
