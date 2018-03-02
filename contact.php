@@ -1,75 +1,78 @@
 <?php
-/*
- *  CONFIGURE EVERYTHING HERE
- */
+/* Set e-mail recipient */
+$myemail  = "Antonia.Villa.2012@gmail.com";
 
-// an email address that will be in the From field of the email.
-$from = 'Demo contact form <demo@domain.com>';
+/* Check all form inputs using check_input function */
+$yourname = check_input($_POST['yourname'], "Enter your name");
+$subject  = check_input($_POST['subject'], "Write a subject");
+$email    = check_input($_POST['email']);
+$website  = check_input($_POST['website']);
+$likeit   = check_input($_POST['likeit']);
+$how_find = check_input($_POST['how']);
+$comments = check_input($_POST['comments'], "Write your comments");
 
-// an email address that will receive the email with the output of the form
-$sendTo = 'Demo contact form <demo@domain.com>';
-
-// subject of the email
-$subject = 'New message from contact form';
-
-// form field names and their translations.
-// array variable name => Text to appear in the email
-$fields = array('name' => 'Name', 'surname' => 'Surname', 'phone' => 'Phone', 'email' => 'Email', 'message' => 'Message'); 
-
-// message that will be displayed when everything is OK :)
-$okMessage = 'Contact form successfully submitted. Thank you, I will get back to you soon!';
-
-// If something goes wrong, we will display this message.
-$errorMessage = 'There was an error while submitting the form. Please try again later';
-
-/*
- *  LET'S DO THE SENDING
- */
-
-// if you are not debugging and don't need error reporting, turn this off by error_reporting(0);
-error_reporting(E_ALL & ~E_NOTICE);
-
-try
+/* If e-mail is not valid show error message */
+if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/", $email))
 {
+    show_error("E-mail address not valid");
+}
 
-    if(count($_POST) == 0) throw new \Exception('Form is empty');
-            
-    $emailText = "You have a new message from your contact form\n=============================\n";
+/* If URL is not valid set $website to empty */
+if (!preg_match("/^(https?:\/\/+[\w\-]+\.[\w\-]+)/i", $website))
+{
+    $website = '';
+}
 
-    foreach ($_POST as $key => $value) {
-        // If the field exists in the $fields array, include it in the email 
-        if (isset($fields[$key])) {
-            $emailText .= "$fields[$key]: $value\n";
-        }
+/* Let's prepare the message for the e-mail */
+$message = "Hello!
+
+Your contact form has been submitted by:
+
+Name: $yourname
+E-mail: $email
+URL: $website
+
+Like the website? $likeit
+How did he/she find it? $how_find
+
+Comments:
+$comments
+
+End of message
+";
+
+/* Send the message using mail() function */
+mail($myemail, $subject, $message);
+
+/* Redirect visitor to the thank you page */
+header('Location: thanks.html');
+exit();
+
+/* Functions we used */
+function check_input($data, $problem='')
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    if ($problem && strlen($data) == 0)
+    {
+        show_error($problem);
     }
-
-    // All the neccessary headers for the email.
-    $headers = array('Content-Type: text/plain; charset="UTF-8";',
-        'From: ' . $from,
-        'Reply-To: ' . $from,
-        'Return-Path: ' . $from,
-    );
-    
-    // Send email
-    mail($sendTo, $subject, $emailText, implode("\n", $headers));
-
-    $responseArray = array('type' => 'success', 'message' => $okMessage);
+    return $data;
 }
-catch (\Exception $e)
+
+function show_error($myError)
 {
-    $responseArray = array('type' => 'danger', 'message' => $errorMessage);
+?>
+    <html>
+    <body>
+
+    <b>Please correct the following error:</b><br />
+    <?php echo $myError; ?>
+
+    </body>
+    </html>
+<?php
+exit();
 }
-
-
-// if requested by AJAX request return JSON response
-if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-    $encoded = json_encode($responseArray);
-
-    header('Content-Type: application/json');
-
-    echo $encoded;
-}
-// else just display the message
-else {
-    echo $responseArray['message'];
-}
+?>
