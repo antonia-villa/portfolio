@@ -133,10 +133,18 @@ outerArcs.append("path")
       .append("textPath")
         .attr("xlink:href", function(d) { return "#group" + d.index; })
         .text(function(d, i){ if(names[i] === 'DreamState' || names[i] === 'Playing Dead' || names[i] === 'Visualize County Data') return names[i]; })
-        .style("fill", "#333333")
-        .style("font-size", "22px")
+        .style("fill", "#616566")
+        .style("font-size", "18px")
         .attr("startOffset", "20%")
-        .style("text-anchor","middle");
+        .style("text-anchor","middle")
+        .on("mouseover", function(d) {
+            d3.select(this).attr("r", 10)
+            .style("fill", "black")
+            .style("font-size", "24px");
+          })                  
+          .on("mouseout", function(d) {
+            d3.select(this).attr("r", 5.5).style("fill", "#616566");
+          });
 
 
 

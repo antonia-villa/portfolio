@@ -377,52 +377,13 @@ a.projectLink{
   } 
 }
 
-#projectsGrid {
-  margin-bottom: 10px;
-}
 
-.box{
-  margin-bottom: 15px
-}
-/********************/
-/* Card Flipping   */
-/********************/
-/*
-.f1_container {
-  position: relative;
-  margin: 10px auto;
-  width: 450px;
-  height: 281px;
-  z-index: 1;
-}
-.f1_container {
-  perspective: 1000;
-}
-#project1Tile {
-  width: 100%;
+
+.projectRow{
   height: 100%;
-  transform-style: preserve-3d;
-  transition: all 1.0s linear;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
-.f1_container:hover #f1_card {
-  transform: rotateY(180deg);
-  box-shadow: -5px 5px 5px #aaa;
-}
-.face {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-}
-.face.back {
-  display: block;
-  transform: rotateY(180deg);
-  box-sizing: border-box;
-  padding: 10px;
-  color: white;
-  text-align: center;
-  background-color: #aaa;
-}*/
 
 /********************/
 /* Text   */
@@ -490,7 +451,11 @@ i {
 
 
 .projectContainer {
-  margin-bottom: 20px;
+  height: 50%;
+  margin-top: 20px;
+  margin-bottom: 60px;
+  margin-left: 60px;
+  margin-right: 60px;
   background-color: #E6E6E6;
   opacity: .9;
   color: #20252b;
