@@ -118,12 +118,25 @@ outerArcs.append("path")
 
 // To append text to interior of chord for project names 
  outerArcs.append("text")
-         .attr("x", 6)
+        .attr("x", 6)
         .attr("dy", -10)
+        .attr("class", "projectLink")
+        .attr("id", function(d, i) { 
+              if(names[i]==='Playing Dead'){
+                return 'project1';
+              } else if (names[i]==='DreamState'){
+                return 'project2';
+              } else if (names[i]==='Visualize County Data'){
+                return 'project3';
+              }
+            })
       .append("textPath")
         .attr("xlink:href", function(d) { return "#group" + d.index; })
-        .text(function(chords, i){ if(names[i] === 'DreamState' || names[i] === 'Playing Dead' || names[i] === 'Visualize County Data') return names[i]; })
-        .style("fill", "black");
+        .text(function(d, i){ if(names[i] === 'DreamState' || names[i] === 'Playing Dead' || names[i] === 'Visualize County Data') return names[i]; })
+        .style("fill", "#333333")
+        .style("font-size", "22px")
+        .attr("startOffset", "20%")
+        .style("text-anchor","middle");
 
 
 
@@ -138,7 +151,9 @@ outerArcs.append("text")
     + "translate(" + (outerRadius + 10) + ")"
     + (d.angle > Math.PI ? "rotate(180)" : "");
   })
-  .text(function(d,i) { if(names[i] != 'DreamState' && names[i] != 'Playing Dead' && names[i] != 'Visualize County Data') return names[i]; });
+  .text(function(d,i) { if(names[i] != 'DreamState' && names[i] != 'Playing Dead' && names[i] != 'Visualize County Data') return names[i]; })
+  .style("font-size", "12px")
+  .style("fill", "#333333");
   
 ////////////////////////////////////////////////////////////
 ////////////////// Draw inner chords ///////////////////////
@@ -156,11 +171,6 @@ svg.selectAll("path.chord")
 ////////////////// Extra Functions /////////////////////////
 ////////////////////////////////////////////////////////////
 
-function popup() {
-  return function(d,i) {
-    console.log("love");
-  };
-}//popup
 
 //Returns an event handler for fading a given chord group.
 function fade(opacity) {
@@ -183,24 +193,6 @@ function mouseoverChord(d,i) {
   d3.select(this)
     .transition()
         .style("opacity", 1);
-
-  //Define and show the tooltip over the mouse location
-  $(this).popover({
-    //placement: 'auto top',
-    title: 'test',
-    placement: 'right',
-    container: 'body',
-    animation: false,
-    offset: "20px -100px",
-    followMouse: true,
-    trigger: 'click',
-    html : true,
-    content: function() {
-      return "<p style='font-size: 11px; text-align: center;'><span style='font-weight:900'>"  +
-           "</span> text <span style='font-weight:900'>"  +
-           "</span> folgt hier <span style='font-weight:900'>" + "</span> movies </p>"; }
-  });
-  $(this).popover('show');
 }
 //Bring all chords back to default opacity
 function mouseoutChord(d) {

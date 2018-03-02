@@ -287,6 +287,25 @@ a{
   padding-bottom: 30px;
 }
 
+#projectsHeaders{
+  position: relative;
+top: 50%;
+  color: #333333;
+  opacity: .7;
+  font-style: italic;
+  font-size: 48px;
+}
+
+#skillsHeaders{
+  position: relative;
+  top: 50%;
+  color: #194973;
+  opacity: .9;
+  font-style: italic;
+  font-size: 48px;
+
+}
+
 .intro-text{
   margin-top: 100px;
   margin-bottom: 100px;
