@@ -279,6 +279,14 @@ a{
   height: 100%;
 }
 
+#d3_visual {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 30px;
+}
+
 .intro-text{
   margin-top: 100px;
   margin-bottom: 100px;

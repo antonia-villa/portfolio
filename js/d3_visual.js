@@ -4,14 +4,12 @@ var names = [ 'HTML',
               'Node/Expresss',
               'React',
               'SQL',
-              'Mongo',
+              'MongoDB',
               'D3',
-              'ChartsJS',
               'Recharts',
               'Playing Dead',
-              'Census Visualizer',
               'DreamState',
-              'Up and Coming' ],
+              'Visualize County Data' ],
     colors = ['#6093BF',
               '#3C74A6',
               '#194973',
@@ -21,29 +19,25 @@ var names = [ 'HTML',
               '#D8BFD8',
               '#FF8200',
               '#F09F0D',
-              '#C73C1C',
-              '#708090',
-              '#708090',
-              '#708090',
-              '#708090'],
+              '#333333',
+              '#333333',
+              '#333333'],
     opacityDefault = 0.8;
 
 
 var matrix = [
-              [0,0,0,0,0,0,0,0,0,0,1,1,1,1],
-              [0,0,0,0,0,0,0,0,0,0,1,1,1,1],
-              [0,0,0,0,0,0,0,0,0,0,1,1,1,1],
-              [0,0,0,0,0,0,0,0,0,0,0,1,1,1],
-              [0,0,0,0,0,0,0,0,0,0,0,0,1,0],
-              [0,0,0,0,0,0,0,0,0,0,0,1,1,1],
-              [0,0,0,0,0,0,0,0,0,0,0,0,1,0],
-              [0,0,0,0,0,0,0,0,0,0,1,0,0,1],
-              [0,0,0,0,0,0,0,0,0,0,0,1,0,0],
-              [0,0,0,0,0,0,0,0,0,0,0,0,1,0],
-              [1,1,1,0,0,0,1,0,0,0,0,0,0,0],
-              [1,1,1,1,1,0,0,1,0,0,0,0,0,0],
-              [1,1,1,1,1,1,0,0,1,1,0,0,0,0],
-              [1,1,1,1,1,0,1,0,0,0,0,0,0,0]
+              [0,0,0,0,0,0,0,0,0,1,1,1],
+              [0,0,0,0,0,0,0,0,0,1,1,1],
+              [0,0,0,0,0,0,0,0,0,1,1,1],
+              [0,0,0,0,0,0,0,0,0,0,1,1],
+              [0,0,0,0,0,0,0,0,0,0,1,0],
+              [0,0,0,0,0,0,0,0,0,0,1,1],
+              [0,0,0,0,0,0,0,0,0,0,1,0],
+              [0,0,0,0,0,0,0,0,0,1,0,1],
+              [0,0,0,0,0,0,0,0,0,0,1,0],
+              [1,1,1,0,0,0,0,1,0,0,0,0],
+              [1,1,1,1,1,1,1,0,1,0,0,0],
+              [1,1,1,1,0,1,0,1,0,0,0,0]
             ]
 
   ////////////////////////////////////////////////////////////
@@ -73,8 +67,8 @@ var matrix = [
 
 
 var bbox = d3.select("#d3_visual").node().getBoundingClientRect()
-var width = bbox.width 
-var height = bbox.height
+var width = bbox.width - 60
+var height = bbox.height - 60
 var innerRadius = Math.min(width, height) * .39,
     outerRadius = innerRadius * 1.1;
 
@@ -97,20 +91,6 @@ var svg = d3.select("#d3_visual").append("svg")
   .datum(chord(matrix));
 
 
-
-// var svg = d3.select("#d3_visual")
-//    .append("div")
-//    .classed("svg-container", true) //container class to make it responsive
-//    .append("svg")
-//    //responsive SVG needs these 2 attributes and no width and height attr
-//    .attr("preserveAspectRatio", "xMinYMin meet")
-//    .attr("viewBox", "0 0 800 800")
-//    //class to make it responsive
-//    .classed("svg-content-responsive", true)
-//    .append("g")
-//    .attr("transform", "translate(" + (width/2 + margin.left) + "," + (height/2 + margin.top) + ")")
-//    .datum(chord(matrix));
-
 ////////////////////////////////////////////////////////////
 ////////////////// Draw outer Arcs /////////////////////////
 ////////////////////////////////////////////////////////////
@@ -131,20 +111,23 @@ outerArcs.append("path")
   .attr("id", function(d, i) { return "group" + d.index; })
   .attr("d", arc);
   
- // outerArcs.append("text")
- //         .attr("x", 6)
- //        .attr("dy", -10)
- //      .append("textPath")
- //        .attr("xlink:href", function(d) { return "#group" + d.index; })
- //        .text(function(chords, i){return names[i];})
- //        .style("fill", "black");
-  
 
 ////////////////////////////////////////////////////////////
 ////////////////////// Append names ////////////////////////
 ////////////////////////////////////////////////////////////
 
-// Append the label names on the outside
+// To append text to interior of chord for project names 
+ outerArcs.append("text")
+         .attr("x", 6)
+        .attr("dy", -10)
+      .append("textPath")
+        .attr("xlink:href", function(d) { return "#group" + d.index; })
+        .text(function(chords, i){ if(names[i] === 'DreamState' || names[i] === 'Playing Dead' || names[i] === 'Visualize County Data') return names[i]; })
+        .style("fill", "black");
+
+
+
+//Append the label names on the outside
 outerArcs.append("text")
   .each(function(d) { d.angle = (d.startAngle + d.endAngle) / 2; })
   .attr("dy", ".35em")
@@ -152,10 +135,10 @@ outerArcs.append("text")
   .attr("text-anchor", function(d) { return d.angle > Math.PI ? "end" : null; })
   .attr("transform", function(d) {
     return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")"
-    + "translate(" + (outerRadius + 20) + ")"
+    + "translate(" + (outerRadius + 10) + ")"
     + (d.angle > Math.PI ? "rotate(180)" : "");
   })
-  .text(function(d,i) { return names[i]; });
+  .text(function(d,i) { if(names[i] != 'DreamState' && names[i] != 'Playing Dead' && names[i] != 'Visualize County Data') return names[i]; });
   
 ////////////////////////////////////////////////////////////
 ////////////////// Draw inner chords ///////////////////////
