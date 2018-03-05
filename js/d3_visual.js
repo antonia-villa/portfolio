@@ -68,7 +68,7 @@ var matrix = [
 
 var bbox = d3.select("#d3_visual").node().getBoundingClientRect()
 var width = bbox.width
-var height = bbox.height - (bbox.height/20)
+var height = bbox.height - (bbox.height/15)
 var innerRadius = Math.min(width, height) * .39,
     outerRadius = innerRadius * 1.1;
 
