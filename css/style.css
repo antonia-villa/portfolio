@@ -288,13 +288,14 @@ a{
   display: flex;
   height: 100%;
   width: 100%;
-  padding-top: 40px;
+  padding-top: 10px;
   padding-bottom: 30px;
 }
 
+
 #projectsHeaders{
   position: relative;
-top: 50%;
+  top: 50%;
   color: #333333;
   opacity: .7;
   font-style: italic;
@@ -308,8 +309,48 @@ top: 50%;
   opacity: .9;
   font-style: italic;
   font-size: 48px;
-
 }
+
+@media (max-width: 500px)
+{ 
+
+  #d3_visual {
+    position: absolute;
+    top: 50;
+  height: 300px;
+  width: 100%;
+  }
+
+  #projectsHeaders{
+    position: absolute;
+    margin-top: 100px;
+    text-align: left;
+    top: 0;
+    left: 0;
+  }
+
+  h1{
+     font-size: 14px;
+  }
+
+  #skillsHeaders{
+    position: absolute;
+    margin-top: 100px;
+    text-align: right;
+    top: 0;
+    left: 0;
+  }
+
+  .projectLink{
+    display: none;
+  }
+
+  .titles{
+    display: none;
+  }
+}
+
+
 
 .intro-text{
   margin-top: 100px;
@@ -324,11 +365,19 @@ top: 50%;
 }
 
 .imageContainer{
-  height: 400px;
-  width: 600px;
+  width: 500px;
   float: right;
   margin-left: 50px;
 }
+
+@media (max-width: 768px)
+{
+    .imageContainer
+    {
+        display: none;
+    }
+}
+
 .projectImage {
   max-width: 100%;
   max-height: 100%;
