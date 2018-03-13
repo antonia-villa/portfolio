@@ -164,23 +164,25 @@ if (!$errName && !$errEmail && !$errMessage) {
 
 
     <!--- Contact Section -->
-<div class="row contact" id="contact">
+<div class='contactContainer'>
+   <div id="contact" class="contactAnchor"></div>
+      <div class="row contactRow">
       <div class="mx-auto contact-info">
         <h2>Let's work together!</h2>
         <hr />
-        <p>If you're a huge nerd like me and love data, but don't know how to visualize it, let's get in touch!</p>
+        <p id="contactMessage">If you're a huge nerd like me and love data, but don't know how to visualize it, let's get in touch!</p>
 <form id="contact-form" method="post" action="index.html" role="form">
     <div class="messages"></div>
     <div class="controls">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 formCol">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input id="name" type="text" name="name" class="form-control" placeholder="First & Last Name" required="required" data-error="Name is required.">
                     <div class="help-block with-errors"></div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 formCol">
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input id="email" type="email" name="email" class="form-control" placeholder="Email Address" required="required" data-error="Valid email is required.">
@@ -189,7 +191,7 @@ if (!$errName && !$errEmail && !$errMessage) {
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 formCol">
                 <div class="form-group">
                     <label for="message">Message</label>
                     <textarea id="message" name="message" class="form-control" placeholder="Message for me" rows="4" required="required" data-error="Please,leave us a message."></textarea>
@@ -225,7 +227,7 @@ if (!$errName && !$errEmail && !$errMessage) {
             </ul>
           </div>
         </div>
-       
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
