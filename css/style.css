@@ -668,6 +668,11 @@ embed {
   text-align: center;
 }
 
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
 /********************/
 /* RESPONSIVE   */
 /********************/
@@ -695,6 +700,10 @@ embed {
 
   p{
     font-size: 12px;
+  }
+  #d3_visual {
+    margin-left: 30px;
+
   }
 
   .buttonContainer{
@@ -747,6 +756,8 @@ embed {
   }
   .aboutMe{
     margin-top: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
   }
 
 }
