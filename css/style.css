@@ -501,6 +501,10 @@ a.projectLink{
   margin-bottom: 20px;
 }
 
+.arrow.up{
+  margin-left: 9px;
+}
+
 .uparrow {
   position:absolute;
   height: 30px;
@@ -604,11 +608,11 @@ i {
 
 .contactAnchor{
   height: 80px;
-
 }
-.contactContainer{
-  height: 100%;
-  background-color: #20252b ;
+
+.row.contact{
+  background-color: #20252b;
+  padding-top:100px;
 }
 
 .contact-info {
@@ -628,6 +632,11 @@ i {
 .network-name {
   text-align:center;
 }
+
+#contact{
+  margin-top:-100px;
+}
+
 
 
 
@@ -660,3 +669,62 @@ embed {
   margin-top: 40px;
   text-align: center;
 }
+
+/********************/
+/* RESPONSIVE   */
+/********************/
+
+@media all and (max-width: 600px) {
+  .downarrow{
+    position: absolute;
+    margin-top: 150px;
+    bottom:auto;
+  }
+
+  .projectContainer{
+    height: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  h3{
+    font-size: 18px;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+  p{
+    font-size: 12px;
+  }
+
+  .buttonContainer{
+    margin-top: 0px;
+    position:relative;
+  }
+
+  .btn {
+    font-size: 12px;
+    height: 38px;
+  }
+
+  .btn-secondard{
+    height: 38px;
+  }
+
+  .gitbutton{
+    margin-top: -3px;
+  }
+
+  .row.contact{
+    background-color: #20252b;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .contactContainer{
+    margin-top:80px;
+  }
+}
+
