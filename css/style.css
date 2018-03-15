@@ -57,13 +57,21 @@ p {
   font-size: 17px;
 }
 
-/*
-.buttonContainer{
-  position: absolute;
-  bottom: 0;
-  margin-top:20px;
-  display: flex;
-  justify-content: center;
+.oi.oi-bar-chart{
+  font-size: 40px;
+  color: black;
+
+}
+
+hr.style2{
+  margin-top: 2rem; 
+  margin-bottom: 2rem
+
+}
+
+
+.btn-group {
+  float: right;
 }
 
 .btn {
@@ -531,6 +539,13 @@ i {
 }
 
 
+/* NEW STYLING */
+
+
+.inner{
+  position: relative;
+  top: 50%;
+}
 
 .projectContainer {
   position: relative;

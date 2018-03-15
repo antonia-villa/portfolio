@@ -122,7 +122,7 @@ outerArcs.append("path")
         .attr("dy", -10)
         .attr("class", "projectLink")
         .attr("id", function(d, i) { 
-              if(names[i]==='Playing Dead'){
+              if(names[i]==='Causes of Death'){
                 return 'project1';
               } else if (names[i]==='DreamState'){
                 return 'project2';
@@ -132,7 +132,7 @@ outerArcs.append("path")
             })
       .append("textPath")
         .attr("xlink:href", function(d) { return "#group" + d.index; })
-        .text(function(d, i){ if(names[i] === 'DreamState' || names[i] === 'Playing Dead' || names[i] === 'Visualize County Data') return names[i]; })
+        .text(function(d, i){ if(names[i] === 'DreamState' || names[i] === 'Causes of Death' || names[i] === 'Visualize County Data') return names[i]; })
         .style("fill", "#616566")
         .style("font-size", "18px")
         .attr("startOffset", "20%")
@@ -161,7 +161,7 @@ outerArcs.append("text")
     + "translate(" + (outerRadius + 10) + ")"
     + (d.angle > Math.PI ? "rotate(180)" : "");
   })
-  .text(function(d,i) { if(names[i] != 'DreamState' && names[i] != 'Playing Dead' && names[i] != 'Visualize County Data') return names[i]; })
+  .text(function(d,i) { if(names[i] != 'DreamState' && names[i] != 'Causes of Death' && names[i] != 'Visualize County Data') return names[i]; })
   .style("font-size", "12px")
   .style("fill", "#333333")
   .on("mouseover", function(d) {
