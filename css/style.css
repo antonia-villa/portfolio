@@ -134,6 +134,7 @@ a{
 }
 
 .gitbutton {
+  margin-top: -3px;
   background-color: none !important; 
   margin-left: 10px;
   color: black;
@@ -451,6 +452,11 @@ a.projectLink{
   margin-bottom:100px;
 }
 
+.projectImage {
+  width: 100%;
+  height: auto;
+}
+
 /********************/
 /* Text   */
 /********************/
@@ -735,11 +741,6 @@ embed {
   }
 
 
-
-
-  .gitbutton{
-    margin-top: -3px;
-  }
 
   .contactContainer{
     margin-top:80px;
