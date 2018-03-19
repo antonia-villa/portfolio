@@ -542,6 +542,8 @@ embed {
 
   .projectImage {
     max-height: 200px;
+    width: auto;
+    margin-bottom: 20px;
   }
 
 }
