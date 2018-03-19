@@ -477,6 +477,7 @@ embed {
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom:150px;
+    margin-top: 30px;
   }
 
   h3{
@@ -529,6 +530,10 @@ embed {
   #brandingStatement{
     font-size: 12px;
   }
+  .aboutContainer{
+    margin-top: 60px;
+  }
+
   .aboutMe{
     margin-top: 0px;
     margin-left: 5px;
