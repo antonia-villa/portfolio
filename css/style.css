@@ -312,6 +312,10 @@ hr {
   width: 100%;
 }
 
+.italic-text{
+  font-style: italic;
+}
+
 
 i {
     text-align: center;

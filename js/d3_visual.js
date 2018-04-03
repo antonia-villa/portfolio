@@ -7,9 +7,10 @@ var names = [ 'HTML',
               'MongoDB',
               'D3',
               'Recharts',
-              'Causes of Death',
+              'Cause of Death',
               'DreamState',
-              'Visualize County Data' ],
+              'Visualize County Data',
+              'Population Growth' ],
     colors = ['#6093BF',
               '#3C74A6',
               '#194973',
@@ -21,24 +22,26 @@ var names = [ 'HTML',
               '#F09F0D',
               '#333333',
               '#333333',
+              '#333333',
               '#333333'],
     opacityDefault = 0.8;
 
 
-var matrix = [
-              [0,0,0,0,0,0,0,0,0,1,1,1],
-              [0,0,0,0,0,0,0,0,0,1,1,1],
-              [0,0,0,0,0,0,0,0,0,1,1,1],
-              [0,0,0,0,0,0,0,0,0,0,1,1],
-              [0,0,0,0,0,0,0,0,0,0,1,0],
-              [0,0,0,0,0,0,0,0,0,0,1,1],
-              [0,0,0,0,0,0,0,0,0,0,1,0],
-              [0,0,0,0,0,0,0,0,0,1,0,1],
-              [0,0,0,0,0,0,0,0,0,0,1,0],
-              [1,1,1,0,0,0,0,1,0,0,0,0],
-              [1,1,1,1,1,1,1,0,1,0,0,0],
-              [1,1,1,1,0,1,0,1,0,0,0,0]
-            ]
+var matrix = [ 
+                [0,0,0,0,0,0,0,0,0,1,1,1,1],
+                [0,0,0,0,0,0,0,0,0,1,1,1,1],
+                [0,0,0,0,0,0,0,0,0,1,1,1,1],
+                [0,0,0,0,0,0,0,0,0,0,1,1,0],
+                [0,0,0,0,0,0,0,0,0,0,1,0,1],
+                [0,0,0,0,0,0,0,0,0,0,1,1,0],
+                [0,0,0,0,0,0,0,0,0,0,1,0,0],
+                [0,0,0,0,0,0,0,0,0,1,0,1,1],
+                [0,0,0,0,0,0,0,0,0,0,1,0,1],
+                [1,1,1,0,0,0,0,1,0,0,0,0,0],
+                [1,1,1,1,1,1,1,0,1,0,0,0,0],
+                [1,1,1,1,0,1,0,1,0,0,0,0,0],
+                [1,1,1,0,1,0,0,1,1,0,0,0,0]
+              ]
 
   ////////////////////////////////////////////////////////////
   /////////// Create scale and layout functions //////////////
@@ -122,25 +125,27 @@ outerArcs.append("path")
         .attr("dy", -10)
         .attr("class", "projectLink")
         .attr("id", function(d, i) { 
-              if(names[i]==='Causes of Death'){
+              if(names[i]==='Cause of Death'){
                 return 'project1';
               } else if (names[i]==='DreamState'){
                 return 'project2';
               } else if (names[i]==='Visualize County Data'){
                 return 'project3';
+              } else if (names[i]==='Population Growth'){
+                return 'project4';
               }
             })
       .append("textPath")
         .attr("xlink:href", function(d) { return "#group" + d.index; })
-        .text(function(d, i){ if(names[i] === 'DreamState' || names[i] === 'Causes of Death' || names[i] === 'Visualize County Data') return names[i]; })
+        .text(function(d, i){ if(names[i] === 'DreamState' || names[i] === 'Cause of Death' || names[i] === 'Visualize County Data' || names[i] === 'Population Growth') return names[i]; })
         .style("fill", "#616566")
-        .style("font-size", "18px")
+        .style("font-size", "15px")
         .attr("startOffset", "20%")
         .style("text-anchor","middle")
         .on("mouseover", function(d) {
             d3.select(this).attr("r", 10)
             .style("fill", "black")
-            .style("font-size", "24px")
+            .style("font-size", "20px")
             .style("font-weight", "bold")
             .style("cursor", "pointer")
           })                  
@@ -161,7 +166,7 @@ outerArcs.append("text")
     + "translate(" + (outerRadius + 10) + ")"
     + (d.angle > Math.PI ? "rotate(180)" : "");
   })
-  .text(function(d,i) { if(names[i] != 'DreamState' && names[i] != 'Causes of Death' && names[i] != 'Visualize County Data') return names[i]; })
+  .text(function(d,i) { if(names[i] != 'DreamState' && names[i] != 'Cause of Death' && names[i] != 'Visualize County Data' && names[i] != 'Population Growth') return names[i]; })
   .style("font-size", "12px")
   .style("fill", "#333333")
   .on("mouseover", function(d) {
